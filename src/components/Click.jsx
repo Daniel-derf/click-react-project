@@ -2,8 +2,6 @@ import React from 'react'
 
 const Click = ({positionY, positionX}) => {
 
-  console.log(positionX, positionY)
-
 
   const style = {
     position: 'absolute',
