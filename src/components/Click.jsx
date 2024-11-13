@@ -2,16 +2,20 @@ import React from 'react'
 
 const Click = ({positionY, positionX}) => {
 
+  console.log(positionX, positionY)
+
 
   const style = {
-    bottom: positionY,
-    right: positionX,
+    position: 'absolute',
+    top: `${positionY}px`,
+    left: `${positionX}px`,
+    fontSize: '50px'
   }
 
   return (
-    <div style={style}>
+    <span style={style}>
       o
-    </div>
+    </span>
   )
 }
 

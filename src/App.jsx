@@ -20,7 +20,7 @@ function App() {
     <h1>Click Challenge</h1>
 
     {clicks.map(click=>(
-      <Click key={click.id} positionX={click.clientX} positionY={click.clientY} />
+      <Click key={click.id} positionX={click.x} positionY={click.y} />
     ))}
 
     </div>
