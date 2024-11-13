@@ -16,14 +16,18 @@ function App() {
 
   }
 
-  const handleAdvanceBtn = () => {
+  const handleAdvanceBtn = (e) => {
+    e.stopPropagation();
+
     if (removedClicks.length>0){
       setRemovedClicks([...removedClicks.slice(0, -1)])
       setClicks([...clicks, removedClicks[removedClicks.length-1]])
     }
   }
   
-  const handleReturnBtn = () => {
+  const handleReturnBtn = (e) => {
+    e.stopPropagation();
+
     if (clicks.length>0){
       const removedClick = clicks[clicks.length-1]
       setRemovedClicks([...removedClicks, removedClick])
@@ -32,14 +36,13 @@ function App() {
   }
 
   return (<>
+    <div className='container' onClick={handleClick}>
+
+    <h1>Click Challenge</h1>
     <div className='btns-div'>
       <button onClick={handleReturnBtn}>Return</button>
       <button onClick={handleAdvanceBtn}>Advance</button>
     </div>
-
-    <div className='container' onClick={handleClick}>
-
-    <h1>Click Challenge</h1>
 
     {clicks.map(click=>(
       <Click key={click.id} positionX={click.x} positionY={click.y} />
