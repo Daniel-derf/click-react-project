@@ -5,8 +5,8 @@ import Click from './components/Click'
 function App() {
 
   const [removedClicks, setRemovedClicks] = useState([])
-
   const [clicks, setClicks] = useState([])
+
 
   const handleClick = (e) => {
 
@@ -40,9 +40,6 @@ function App() {
     <div className='container' onClick={handleClick}>
 
     <h1>Click Challenge</h1>
-
-    
-
 
     {clicks.map(click=>(
       <Click key={click.id} positionX={click.x} positionY={click.y} />
