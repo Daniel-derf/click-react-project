@@ -4,6 +4,8 @@ import Click from './components/Click'
 
 function App() {
 
+  const [removedClicks, setRemovedClicks] = useState([])
+
   const [clicks, setClicks] = useState([])
 
   const handleClick = (e) => {
@@ -14,14 +16,19 @@ function App() {
 
   }
 
-  const handleAdvanceBtn = () => {}
+  const handleAdvanceBtn = () => {
+    if (removedClicks.length>0){
+      setRemovedClicks([...removedClicks.slice(0, -1)])
+      setClicks([...clicks, removedClicks[removedClicks.length-1]])
+    }
+  }
   
   const handleReturnBtn = () => {
-    setClicks([...clicks.slice(0, -1)])
-
-    console.log(clicks.slice(0, -1))
-
-    console.log('teste')
+    if (clicks.length>0){
+      const removedClick = clicks[clicks.length-1]
+      setRemovedClicks([...removedClicks, removedClick])
+      setClicks([...clicks.slice(0, -1)])
+    }
   }
 
   return (<>
