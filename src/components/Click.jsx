@@ -7,9 +7,10 @@ const Click = ({positionY, positionX}) => {
 
   const style = {
     position: 'absolute',
-    top: `${positionY}px`,
-    left: `${positionX}px`,
-    fontSize: '50px'
+    top: `${positionY-30}px`,
+    left: `${positionX-20}px`,
+    fontSize: '50px',
+    userSelect: 'none'
   }
 
   return (
